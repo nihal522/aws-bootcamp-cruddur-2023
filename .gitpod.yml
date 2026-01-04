@@ -4,6 +4,10 @@ tasks:
       AWS_CLI_AUTO_PROMPT: on-partial
     init: |
       set -e
+      echo "=== .gitpod.yml init ran ==="
+      date | tee /tmp/gitpod-init-ran.txt
+      ls -la | head
+      set -e
       cd "${GITPOD_REPO_ROOT:-$PWD}"
 
       sudo apt-get update
